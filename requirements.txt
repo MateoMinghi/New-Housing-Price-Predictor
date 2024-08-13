@@ -5,6 +5,4 @@ Flask
 gunicorn
 click
 itsdangerous
-Jinja2
-MaskupSafe
 Werkzeug
