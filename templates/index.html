@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housing Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> 
+</head>
+<body>
+    <div class="container">
+        <h1>Housing Price Prediction</h1>
+        <form action="{{ url_for('predict')}}" method="post">
+            <div class="form-group">
+                <label for="rooms">Number of Rooms</label>
+                <input type="number" name="bedroom_count" placeholder="Bedroom_Count" required="required" />
+            </div>
+            <div class="form-group">
+                <label for="distance_city">Distance from City Center (km)</label>
+                <input type="text" name="center_distance" placeholder="Center_Distance" required="required" />
+            </div>
+            <div class="form-group">
+                <label for="distance_metro">Distance from Metro (km)</label>
+                <input type="text" name="metro_distance" placeholder="Metro_distance" required="required" />
+            </div>
+            <div class="form-group">
+                <label for="age">Age of the House (years)</label>
+                <input type="text" name="age" placeholder="Age" required="required" />
+            </div>
+            <div class="form-group">
+                <label for="net_area">Net Square Meters (m²)</label>
+                <input type="text" name="net_sqm" placeholder="Net_SQM" required="required" />
+            </div>
+            <button type="submit">Predict Price</button>
+        </form>
+        <div id="result">
+            <h2>Predicted Price: {{ prediction_text }} </h2>
+        </div>
+    </div>
+</body>
+</html>
